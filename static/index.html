@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Izity🤔</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+		
+	</head>
+	
+	<body>
+		<div class="container">
+		
+			<div class="tittle">
+				<h1>Izity</h1>
+				<img src="thinking.gif" style="width: 15%">
+			</div>
+
+			<div class="toggler">
+				<a onclick="toggleRecording(this);"><i id="butn" class="fas fa-play"></i></a>
+			</div>
+
+		</div>
+
+	</body>
+	<script src="main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$("a").click(function (e) {
+
+			// Remove any old one
+			$(".ripple").remove();
+
+			// Setup
+			var posX = $('body').offset().left,
+			  posY = $('body').offset().top,
+			  buttonWidth = $('body').width(),
+			  buttonHeight =  $('body').height();
+
+			// Add the element
+			$('body').prepend("<span class='ripple'></span>");
+
+
+			// Make it round!
+			if(buttonWidth >= buttonHeight) {
+			buttonHeight = buttonWidth;
+			} else {
+			buttonWidth = buttonHeight; 
+			}
+
+			// Get the center of the element
+			var x = e.pageX - posX - buttonWidth / 2;
+			var y = e.pageY - posY - buttonHeight / 2;
+
+
+			// Add the ripples CSS and start the animation
+			$(".ripple").css({
+			width: buttonWidth,
+			height: buttonHeight,
+			top: y + 'px',
+			left: x + 'px'
+			}).addClass("rippleEffect");
+	});
+	</script>
+</html>

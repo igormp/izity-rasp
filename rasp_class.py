@@ -7,7 +7,7 @@ import ast
 import sys
 import datetime
 
-class Izity:
+class Jarvis:
 	pa = pyaudio.PyAudio()
 	data_frames = []
 	resposta = ''

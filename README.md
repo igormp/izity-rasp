@@ -1,4 +1,4 @@
-# izity-rasp
+# jarvis-rasp
 
 Sistema de integração da Raspberry com a API central de processamento de voz. Inclui servidor para front-end da demo e um servidor que realiza a comunicação com a API em si.
 

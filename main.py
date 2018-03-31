@@ -1,5 +1,5 @@
 import pyaudio
-from rasp_class import Izity
+from rasp_class import Jarvis
 
 #init cons
 BUFFER_SIZE = 1024
@@ -9,15 +9,15 @@ FORMAT = pyaudio.paInt16
 WAVE_OUTPUT_FILENAME = "file.wav"
 
 def main():
-	izity = Izity(FORMAT, RATE, BUFFER_SIZE, WAVE_OUTPUT_FILENAME)
-	izity.record_sound(izity.RATE/izity.BUFFER_SIZE * REC_SECONDS)
-	izity.save_file()
-	izity.send_file("https://izity-api.herokuapp.com/users/5aadca3b71e9ff001f13cd89/verify")
+	jarvis = Jarvis(FORMAT, RATE, BUFFER_SIZE, WAVE_OUTPUT_FILENAME)
+	jarvis.record_sound(jarvis.RATE/jarvis.BUFFER_SIZE * REC_SECONDS)
+	jarvis.save_file()
+	jarvis.send_file("https://jarvis-api.herokuapp.com/users/5aadca3b71e9ff001f13cd89/verify")
 
-	#izity.record_sound(-1)
-	#izity.save_file()
-	#izity.send_file("https://izity-api.herokuapp.com/users/5aadca3b71e9ff001f13cd89/calls")
+	#jarvis.record_sound(-1)
+	#jarvis.save_file()
+	#jarvis.send_file("https://jarvis-api.herokuapp.com/users/5aadca3b71e9ff001f13cd89/calls")
 
-	izity.close()
-	print(izity.resposta)
-	return izity.resposta
+	jarvis.close()
+	print(jarvis.resposta)
+	return jarvis.resposta
